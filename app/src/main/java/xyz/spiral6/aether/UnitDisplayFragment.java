@@ -62,7 +62,7 @@ public class UnitDisplayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_unit_display, container, false);
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.portraitPager);
+        ViewPager viewPager = view.findViewById(R.id.portraitPager);
         PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getContext(), new int[]{R.drawable.fcorrin1,R.drawable.fcorrin2,R.drawable.fcorrin3,R.drawable.fcorrin4});
         viewPager.setAdapter(viewPagerAdapter);
         // Inflate the layout for this fragment
