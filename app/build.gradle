@@ -27,7 +27,7 @@ android {
             // sources. Because Gradle gives these directories equal priority, if
             // you define the same resource in more than one directory, you get an
             // error when merging resources. The default directory is 'src/main/res'.
-            res.srcDirs = ['src/main/res', 'src/main/res2']
+            res.srcDirs = ['src/main/res', 'src/main/heroes', 'src/main/typeicons']
 
             // Note: You should avoid specifying a directory which is a parent to one
             // or more other directories you specify. For example, avoid the following:
