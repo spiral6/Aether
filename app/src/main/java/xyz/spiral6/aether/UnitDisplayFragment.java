@@ -3,6 +3,8 @@ package xyz.spiral6.aether;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +51,7 @@ public class UnitDisplayFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -58,8 +61,12 @@ public class UnitDisplayFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_unit_display, container, false);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.portraitPager);
+        PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getContext(), new int[]{R.drawable.fcorrin1,R.drawable.fcorrin2,R.drawable.fcorrin3,R.drawable.fcorrin4});
+        viewPager.setAdapter(viewPagerAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_unit_display, container, false);
+        return view;
     }
 
 }

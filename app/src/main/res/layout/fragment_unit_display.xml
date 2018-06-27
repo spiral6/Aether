@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
+    <!--ImageView
         android:id="@+id/portrait"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +15,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/portraitPicker" />
+        app:layout_constraintTop_toBottomOf="@+id/portraitPicker" /-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/portraitPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unitName">
+
+    </android.support.v4.view.ViewPager>
 
     <TextView
         android:id="@+id/unitName"
@@ -51,16 +63,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movementType" />
-
-    <Spinner
-        android:id="@+id/portraitPicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unitName" />
 
 </android.support.constraint.ConstraintLayout>
