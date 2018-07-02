@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/UnitInfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -49,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Corrin - Fateful Princess"
+                android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -83,7 +84,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <TextView
-            android:id="@+id/rarity"
+            android:id="@+id/RarityLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Gacha: Obtained at 3-4 ★"
@@ -92,6 +93,7 @@
             tools:layout_editor_absoluteY="632dp" />
 
         <LinearLayout
+            android:id="@+id/RaritySelector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3">
@@ -133,13 +135,13 @@
             android:layout_height="match_parent">
 
             <TableRow
-                android:id="@+id/WeaponSwitchRow"
+                android:id="@+id/Level1_WeaponSwitchRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2">
 
                 <TextView
-                    android:id="@+id/IVLabel"
+                    android:id="@+id/Level1_IVLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -147,7 +149,7 @@
                     android:text="Level 1 IVs" />
 
                 <Switch
-                    android:id="@+id/WeaponSwitch"
+                    android:id="@+id/Level1_WeaponSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -156,20 +158,20 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/HeaderRow"
+                android:id="@+id/Level1_HeaderRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6">
 
                 <TextView
-                    android:id="@+id/blankHeader"
+                    android:id="@+id/Level1_blankHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/hpHeader"
+                    android:id="@+id/Level1_hpHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -177,7 +179,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/atkHeader"
+                    android:id="@+id/Level1_atkHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -185,7 +187,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/spdHeader"
+                    android:id="@+id/Level1_spdHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -193,7 +195,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/defHeader"
+                    android:id="@+id/Level1_defHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -201,7 +203,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/resHeader"
+                    android:id="@+id/Level1_resHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -210,20 +212,20 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/MinusIVRow"
+                android:id="@+id/Level1_MinusIVRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6">
 
                 <TextView
-                    android:id="@+id/lowHeader"
+                    android:id="@+id/Level1_lowHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Low" />
 
                 <TextView
-                    android:id="@+id/minusHP"
+                    android:id="@+id/Level1_minusHP"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -232,7 +234,7 @@
                     android:textColor="@android:color/holo_red_dark" />
 
                 <TextView
-                    android:id="@+id/minusATK"
+                    android:id="@+id/Level1_minusATK"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -241,7 +243,7 @@
                     android:textColor="@android:color/holo_red_dark" />
 
                 <TextView
-                    android:id="@+id/minusSPD"
+                    android:id="@+id/Level1_minusSPD"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -250,7 +252,7 @@
                     android:textColor="@android:color/holo_red_dark" />
 
                 <TextView
-                    android:id="@+id/minusDEF"
+                    android:id="@+id/Level1_minusDEF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -259,7 +261,7 @@
                     android:textColor="@android:color/holo_red_dark" />
 
                 <TextView
-                    android:id="@+id/minusRES"
+                    android:id="@+id/Level1_minusRES"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -269,20 +271,20 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/NeutralIVRow"
+                android:id="@+id/Level1_NeutralIVRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6">
 
                 <TextView
-                    android:id="@+id/middleHeader"
+                    android:id="@+id/Level1_middleHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Middle" />
 
                 <TextView
-                    android:id="@+id/neutralHP"
+                    android:id="@+id/Level1_neutralHP"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -291,7 +293,7 @@
                     android:textColor="@android:color/holo_orange_dark" />
 
                 <TextView
-                    android:id="@+id/neutralATK"
+                    android:id="@+id/Level1_neutralATK"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -300,7 +302,7 @@
                     android:textColor="@android:color/holo_orange_dark" />
 
                 <TextView
-                    android:id="@+id/neutralSPD"
+                    android:id="@+id/Level1_neutralSPD"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -309,7 +311,7 @@
                     android:textColor="@android:color/holo_orange_dark" />
 
                 <TextView
-                    android:id="@+id/neutralDEF"
+                    android:id="@+id/Level1_neutralDEF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -318,7 +320,7 @@
                     android:textColor="@android:color/holo_orange_dark" />
 
                 <TextView
-                    android:id="@+id/neutralRES"
+                    android:id="@+id/Level1_neutralRES"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -328,20 +330,20 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/PlusIVRow"
+                android:id="@+id/Level1_PlusIVRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6">
 
                 <TextView
-                    android:id="@+id/highHeader"
+                    android:id="@+id/Level1_highHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="High" />
 
                 <TextView
-                    android:id="@+id/plusHP"
+                    android:id="@+id/Level1_plusHP"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -350,7 +352,7 @@
                     android:textColor="@android:color/holo_green_light" />
 
                 <TextView
-                    android:id="@+id/plusATK"
+                    android:id="@+id/Level1_plusATK"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -359,7 +361,7 @@
                     android:textColor="@android:color/holo_green_light" />
 
                 <TextView
-                    android:id="@+id/plusSPD"
+                    android:id="@+id/Level1_plusSPD"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -368,7 +370,7 @@
                     android:textColor="@android:color/holo_green_light" />
 
                 <TextView
-                    android:id="@+id/plusDEF"
+                    android:id="@+id/Level1_plusDEF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -377,11 +379,271 @@
                     android:textColor="@android:color/holo_green_light" />
 
                 <TextView
-                    android:id="@+id/plusRES"
+                    android:id="@+id/Level1_plusRES"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="7"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_green_light" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/Level40IVsTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/Level40_WeaponSwitchRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/Level40_IVLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Level 40 IVs" />
+
+                <Switch
+                    android:id="@+id/Level40_WeaponSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Weapon"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Level40_HeaderRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/Level40_blankHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/Level40_hpHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HP"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/Level40_atkHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ATK"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/Level40_spdHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SPD"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/Level40_defHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DEF"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/Level40_resHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RES"
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Level40_MinusIVRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/Level40_lowHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Low" />
+
+                <TextView
+                    android:id="@+id/Level40_minusHP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="37"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_minusATK"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="24"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_minusSPD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="31"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_minusDEF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="31"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_minusRES"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="18"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Level40_NeutralIVRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/Level40_middleHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Middle" />
+
+                <TextView
+                    android:id="@+id/Level40_neutralHP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="41"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_orange_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_neutralATK"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="27"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_orange_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_neutralSPD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="34"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_orange_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_neutralDEF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="34"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_orange_dark" />
+
+                <TextView
+                    android:id="@+id/Level40_neutralRES"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="21"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_orange_dark" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Level40_PlusIVRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/Level40_highHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="High" />
+
+                <TextView
+                    android:id="@+id/Level40_plusHP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="44"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_green_light" />
+
+                <TextView
+                    android:id="@+id/Level40_plusATK"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="31"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_green_light" />
+
+                <TextView
+                    android:id="@+id/Level40_plusSPD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="37"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_green_light" />
+
+                <TextView
+                    android:id="@+id/Level40_plusDEF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="37"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_green_light" />
+
+                <TextView
+                    android:id="@+id/Level40_plusRES"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="24"
                     android:textAlignment="center"
                     android:textColor="@android:color/holo_green_light" />
             </TableRow>
