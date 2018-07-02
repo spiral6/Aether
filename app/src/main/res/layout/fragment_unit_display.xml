@@ -110,21 +110,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="3 ★" />
+                    android:text="3 ★"
+                    android:textAlignment="center" />
 
                 <RadioButton
                     android:id="@+id/fourstarIV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4 ★" />
+                    android:text="4 ★"
+                    android:textAlignment="center" />
 
                 <RadioButton
                     android:id="@+id/fivestarIV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="5 ★" />
+                    android:text="5 ★"
+                    android:textAlignment="center" />
             </RadioGroup>
 
         </LinearLayout>
