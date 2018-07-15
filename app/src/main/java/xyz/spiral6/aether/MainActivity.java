@@ -112,8 +112,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_builds) {
             // Handle the camera action
         } else if (id == R.id.nav_units) {
-            //fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
-            fragment = new UnitsFragment();
+            fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
+            //fragment = new UnitsFragment();
         } else if (id == R.id.nav_skills) {
 
         } else if (id == R.id.nav_fodder) {

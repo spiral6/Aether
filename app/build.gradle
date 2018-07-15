@@ -17,8 +17,8 @@ android {
         }
     }
     buildToolsVersion '27.0.3'
-    sourceSets{
-        main{
+    sourceSets {
+        main {
             // Changes the directory for Java sources. The default directory is
             // 'src/main/java'.
             //java.srcDirs = ['src/main/java']
@@ -39,7 +39,10 @@ android {
             // By default, Android Studio creates a manifest for your main source
             // set in the src/main/ directory.
             //manifest.srcFile 'other/AndroidManifest.xml'
-        }
+        
+
+            assets.srcDirs=['src/main/assets']
+}
     }
 }
 
@@ -53,4 +56,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 }
