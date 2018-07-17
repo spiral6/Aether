@@ -22,7 +22,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnFragmentInteractionListener, UnitsFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnFragmentInteractionListener, UnitsFragment.OnFragmentInteractionListener,
+                   BuildsFragment.OnFragmentInteractionListener{
 
     //the reason these are hard coded in
     // is because Android is not able to parse "@string/preferences" in the getSharedPrefernces() method.
@@ -110,10 +111,10 @@ public class MainActivity extends AppCompatActivity
 
         Fragment fragment = null;
         if (id == R.id.nav_builds) {
-            // Handle the camera action
+            fragment = new BuildsFragment();
         } else if (id == R.id.nav_units) {
-            fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
-            //fragment = new UnitsFragment();
+            //fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
+            fragment = new UnitsFragment();
         } else if (id == R.id.nav_skills) {
 
         } else if (id == R.id.nav_fodder) {
