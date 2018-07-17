@@ -1,4 +1,4 @@
-package xyz.spiral6.aether;
+package xyz.spiral6.aether.units;
 
 
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import xyz.spiral6.aether.R;
 
 
 /**

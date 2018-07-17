@@ -1,4 +1,4 @@
-package xyz.spiral6.aether;
+package xyz.spiral6.aether.units;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import xyz.spiral6.aether.R;
 
 public class UnitDisplayPortraitPagerAdapter extends PagerAdapter {
     Context context;

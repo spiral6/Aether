@@ -1,4 +1,4 @@
-package xyz.spiral6.aether.data;
+package xyz.spiral6.aether.units.data;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
