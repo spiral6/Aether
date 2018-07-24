@@ -1,21 +1,30 @@
 package xyz.spiral6.aether.units.data;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 @Entity(tableName = "UnitAttributes", primaryKeys = {"DisplayName", "Epithet"})
 public class UnitEntity{
+    @NonNull
     private String Name;
     @NonNull
     private String DisplayName;
     @NonNull
     private String Epithet;
+    @NonNull
     private String FlavorText;
+    @NonNull
     private String Series;
+    @NonNull
     private String MoveType;
+    @NonNull
     private String WeaponType;
+    @NonNull
     private String Color;
+    @NonNull
     private int BST;
     private String WeaponSkills;
     private String ASkills;
@@ -24,11 +33,16 @@ public class UnitEntity{
     private String AssistSkills;
     private String SpecialSkills;
     private String LegendaryElement;
-    private String LegendaryHP;
-    private String LegendaryATK;
-    private String LegendarySPD;
-    private String LegendaryDEF;
-    private String LegendaryRES;
+    @Nullable
+    private Integer LegendaryHP;
+    @Nullable
+    private Integer LegendaryATK;
+    @Nullable
+    private Integer LegendarySPD;
+    @Nullable
+    private Integer LegendaryDEF;
+    @Nullable
+    private Integer LegendaryRES;
 
     public String getName() {
         return Name;
@@ -67,52 +81,40 @@ public class UnitEntity{
     public int getBST() {
         return BST;
     }
-
     public String getWeaponSkills() {
         return WeaponSkills;
     }
-
     public String getASkills() {
         return ASkills;
     }
-
     public String getBSkills() {
         return BSkills;
     }
-
     public String getCSkills() {
         return CSkills;
     }
-
     public String getAssistSkills() {
         return AssistSkills;
     }
-
     public String getSpecialSkills() {
         return SpecialSkills;
     }
-
     public String getLegendaryElement() {
         return LegendaryElement;
     }
-
-    public String getLegendaryHP() {
+    public Integer getLegendaryHP() {
         return LegendaryHP;
     }
-
-    public String getLegendaryATK() {
+    public Integer getLegendaryATK() {
         return LegendaryATK;
     }
-
-    public String getLegendarySPD() {
+    public Integer getLegendarySPD() {
         return LegendarySPD;
     }
-
-    public String getLegendaryDEF() {
+    public Integer getLegendaryDEF() {
         return LegendaryDEF;
     }
-
-    public String getLegendaryRES() {
+    public Integer getLegendaryRES() {
         return LegendaryRES;
     }
 
@@ -180,23 +182,23 @@ public class UnitEntity{
         LegendaryElement = legendaryElement;
     }
 
-    public void setLegendaryHP(String legendaryHP) {
+    public void setLegendaryHP(Integer legendaryHP) {
         LegendaryHP = legendaryHP;
     }
 
-    public void setLegendaryATK(String legendaryATK) {
+    public void setLegendaryATK(Integer legendaryATK) {
         LegendaryATK = legendaryATK;
     }
 
-    public void setLegendarySPD(String legendarySPD) {
+    public void setLegendarySPD(Integer legendarySPD) {
         LegendarySPD = legendarySPD;
     }
 
-    public void setLegendaryDEF(String legendaryDEF) {
+    public void setLegendaryDEF(Integer legendaryDEF) {
         LegendaryDEF = legendaryDEF;
     }
 
-    public void setLegendaryRES(String legendaryRES) {
+    public void setLegendaryRES(Integer legendaryRES) {
         LegendaryRES = legendaryRES;
     }
 }

@@ -18,30 +18,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <SearchView
+            <AutoCompleteTextView
                 android:id="@+id/UnitSearch"
                 android:layout_width="374dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="8dp"
-                android:iconifiedByDefault="false"
-                android:queryHint="Search units..."
+                android:completionThreshold="2"
+                android:hint="Search units..."
+                android:inputType="textVisiblePassword"
+                android:maxLines="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/UnitSearchSuggestions"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/UnitSearch">
-
-            </android.support.v7.widget.RecyclerView>
 
             <fragment
                 android:id="@+id/UnitDisplayFragment"
@@ -51,7 +40,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/UnitSearchSuggestions" />
+                app:layout_constraintTop_toBottomOf="@+id/UnitSearch" />
         </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>

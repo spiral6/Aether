@@ -12,14 +12,13 @@ public abstract class UnitDatabase extends RoomDatabase {
 
     private static UnitDatabase INSTANCE;
 
-    static UnitDatabase getDatabase(final Context context){
+    public static UnitDatabase getDatabase(final Context context){
         if (INSTANCE == null) {
             synchronized (UnitDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = RoomAsset.databaseBuilder(context.getApplicationContext(),
-                            UnitDatabase.class, "Main.db")
+                            UnitDatabase.class, "Main.db").allowMainThreadQueries() //TODO: Disable allowMainThreadQuaries() once multithreading/async support is added.
                             .build();
-
                 }
             }
         }
