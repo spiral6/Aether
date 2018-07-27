@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,12 +29,10 @@ import xyz.spiral6.aether.units.data.UnitEntity;
  * create an instance of this fragment.
  */
 public class UnitsFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private AutoCompleteTextView UnitSearch;
     private UnitDatabase unitDatabase;
 
-    // TODO: Rename and change types of parameters
 
     private OnFragmentInteractionListener mListener;
 
@@ -43,15 +40,6 @@ public class UnitsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UnitsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static UnitsFragment newInstance(String param1, String param2) {
         UnitsFragment fragment = new UnitsFragment();
         Bundle args = new Bundle();
@@ -62,8 +50,7 @@ public class UnitsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
+        //if (getArguments() != null) { }
         unitDatabase = UnitDatabase.getDatabase(getContext());
     }
 
@@ -72,14 +59,14 @@ public class UnitsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_units, container, false);
-        UnitSearch = (AutoCompleteTextView) view.findViewById(R.id.UnitSearch);
+        UnitSearch = view.findViewById(R.id.UnitSearch);
 
         getFragmentManager().beginTransaction().replace(R.id.UnitDisplayFragment, UnitDisplayFragment.newInstance()).commit();
 
         String[] unitsArray = getUnits();
 
 
-        ArrayAdapter adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, unitsArray);
+        ArrayAdapter<String> adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, unitsArray);
         UnitSearch.setAdapter(adapter);
         UnitSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -117,7 +104,6 @@ public class UnitsFragment extends Fragment {
         return unitDatabase.UnitDAO().getUnit(DisplayName);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -152,7 +138,6 @@ public class UnitsFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

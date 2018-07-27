@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 import xyz.spiral6.aether.R;
 
-public class UnitDisplayPortraitPagerAdapter extends PagerAdapter {
-    Context context;
-    int images[];
-    LayoutInflater layoutInflater;
+class UnitDisplayPortraitPagerAdapter extends PagerAdapter {
+    private Context context;
+    private int[] images;
+    private LayoutInflater layoutInflater;
 
 
     public UnitDisplayPortraitPagerAdapter(Context context, int images[]) {
@@ -30,14 +30,14 @@ public class UnitDisplayPortraitPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == ((LinearLayout) object);
+        return view == object;
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         View itemView = layoutInflater.inflate(R.layout.fragment_unit_display_portrait, container, false);
 
-        ImageView imageView = (ImageView) itemView.findViewById(R.id.portrait);
+        ImageView imageView = itemView.findViewById(R.id.portrait);
         imageView.setImageResource(images[position]);
 
         container.addView(itemView);

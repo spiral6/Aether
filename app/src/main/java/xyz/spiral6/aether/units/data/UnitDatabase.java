@@ -17,7 +17,7 @@ public abstract class UnitDatabase extends RoomDatabase {
             synchronized (UnitDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = RoomAsset.databaseBuilder(context.getApplicationContext(),
-                            UnitDatabase.class, "Main.db").allowMainThreadQueries() //TODO: Disable allowMainThreadQuaries() once multithreading/async support is added.
+                            UnitDatabase.class, "Main.db").allowMainThreadQueries() //TODO: Disable allowMainThreadQueries() once multithreading/async support is added.
                             .build();
                 }
             }

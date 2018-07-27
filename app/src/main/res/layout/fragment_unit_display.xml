@@ -680,7 +680,7 @@
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:inputType="textPersonName"
-                    android:text="Origin"
+                    android:text="@string/unitdisplay_series_header"
                     android:textSize="18sp" />
 
                 <TextView
@@ -707,7 +707,7 @@
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:inputType="textMultiLine"
-                    android:text="Flavor Text"
+                    android:text="@string/unitdisplay_flavor_header"
                     android:textSize="18sp" />
 
                 <TextView

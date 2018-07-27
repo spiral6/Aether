@@ -31,13 +31,7 @@ public class SettingsFragment extends Fragment {
     }
 
     public static SettingsFragment newInstance() {
-        SettingsFragment fragment = new SettingsFragment();
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        return new SettingsFragment();
     }
 
     @Override
@@ -59,7 +53,7 @@ public class SettingsFragment extends Fragment {
         return view;
     }
 
-    public void toggleTheme(boolean darkTheme) {
+    private void toggleTheme(boolean darkTheme) {
         SharedPreferences.Editor editor = getActivity().getSharedPreferences(MainActivity.PREFS_NAME, getActivity().MODE_PRIVATE).edit();
         editor.putBoolean(MainActivity.PREF_DARK_THEME, darkTheme);
         editor.apply();

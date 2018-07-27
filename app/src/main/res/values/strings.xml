@@ -9,8 +9,19 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="settings_dark_theme">Dark Theme</string>
+    <string name="unit_search">Search units...</string>
+
+    <string name="builds_unit_desc">Unit icon.</string>
+    <string name="builds_weapon_desc">Weapon skill icon.</string>
+    <string name="builds_assist_desc">Assist skill icon</string>
+    <string name="builds_special_desc">Special skill icon</string>
+    <string name="builds_askill_desc">A skill icon</string>
+    <string name="builds_bskill_desc">B skill icon</string>
+    <string name="builds_cskill_desc">C skill icon</string>
+    <string name="builds_sealskill_desc">Seal skill icon</string>
 
     <string name="unitdisplay_image_desc">Unit image.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unitdisplay_series_header">Origin</string>
+    <string name="unitdisplay_flavor_header">Flavor Text</string>
+
 </resources>

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
                    BuildsFragment.OnFragmentInteractionListener{
 
     //the reason these are hard coded in
-    // is because Android is not able to parse "@string/preferences" in the getSharedPrefernces() method.
+    // is because Android is not able to parse "@string/preferences" in the getSharedPreferences() method.
     //Android is dumb
     public static final String PREFS_NAME = "prefs";
     public static final String PREF_DARK_THEME = "dark_theme";
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -50,19 +50,19 @@ public class MainActivity extends AppCompatActivity
             }
         });*/
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -107,17 +107,23 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         Fragment fragment = null;
-        if (id == R.id.nav_builds) {
-            fragment = new BuildsFragment();
-        } else if (id == R.id.nav_units) {
-            //fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
-            fragment = new UnitsFragment();
-        } else if (id == R.id.nav_skills) {
+        switch (id) {
+            case R.id.nav_builds:
+                fragment = new BuildsFragment();
+                break;
+            case R.id.nav_units:
+                //fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
+                fragment = new UnitsFragment();
+                break;
+            case R.id.nav_skills:
 
-        } else if (id == R.id.nav_fodder) {
+                break;
+            case R.id.nav_fodder:
 
-        } else if (id == R.id.nav_about) {
+                break;
+            case R.id.nav_about:
 
+                break;
         }
 
         if (fragment != null) {
@@ -127,7 +133,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

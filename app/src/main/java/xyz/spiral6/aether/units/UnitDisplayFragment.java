@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import kotlin.Unit;
 import xyz.spiral6.aether.R;
 import xyz.spiral6.aether.units.data.UnitEntity;
 
@@ -22,26 +21,16 @@ import xyz.spiral6.aether.units.data.UnitEntity;
  * create an instance of this fragment.
  */
 public class UnitDisplayFragment extends Fragment {
-    // TODO: Rename and change types of parameters
     private UnitEntity unit = new UnitEntity();
-
-    private TextView UnitNameLabel;
-    private ImageView MovementType;
-    private ImageView WeaponType;
-    private ImageView LegendaryType;
-    private TextView SeriesText;
-    private TextView FlavorText;
 
     public UnitDisplayFragment() {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
     public static UnitDisplayFragment newInstance() {
-        UnitDisplayFragment fragment = new UnitDisplayFragment();
         //Bundle args = new Bundle();
         //fragment.setArguments(args);
-        return fragment;
+        return new UnitDisplayFragment();
     }
 
     @Override
@@ -116,22 +105,22 @@ public class UnitDisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_unit_display, container, false);
         ViewPager viewPager = view.findViewById(R.id.portraitPager);
-        if(!(unit.getName() == "" || unit.getName() == null)){
+        if(!(unit.getName() == null)){
             PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getContext(), pictureLoader(unit.getName()));
             viewPager.setAdapter(viewPagerAdapter);
 
-            UnitNameLabel = view.findViewById(R.id.unit_search_item_name);
-            UnitNameLabel.setText(unit.getDisplayName() + " - " + unit.getEpithet());
-            SeriesText = view.findViewById(R.id.SeriesText);
-            SeriesText.setText(unit.getSeries());
-            FlavorText = view.findViewById(R.id.FlavorText);
-            FlavorText.setText(unit.getFlavorText());
-            MovementType = view.findViewById(R.id.movementType);
-            MovementType.setImageResource(getMovementType(unit.getMoveType()));
-            WeaponType = view.findViewById(R.id.weaponType);
-            WeaponType.setImageResource(getWeaponType(unit.getWeaponType()));
-            LegendaryType = view.findViewById(R.id.legendaryType);
-            LegendaryType.setImageResource(getLegendaryType(unit.getLegendaryElement()));
+            TextView unitNameLabel = view.findViewById(R.id.unit_search_item_name);
+            unitNameLabel.setText(unit.getDisplayName() + " - " + unit.getEpithet());
+            TextView seriesText = view.findViewById(R.id.SeriesText);
+            seriesText.setText(unit.getSeries());
+            TextView flavorText = view.findViewById(R.id.FlavorText);
+            flavorText.setText(unit.getFlavorText());
+            ImageView movementType = view.findViewById(R.id.movementType);
+            movementType.setImageResource(getMovementType(unit.getMoveType()));
+            ImageView weaponType = view.findViewById(R.id.weaponType);
+            weaponType.setImageResource(getWeaponType(unit.getWeaponType()));
+            ImageView legendaryType = view.findViewById(R.id.legendaryType);
+            legendaryType.setImageResource(getLegendaryType(unit.getLegendaryElement()));
         }
         // Inflate the layout for this fragment
         return view;
