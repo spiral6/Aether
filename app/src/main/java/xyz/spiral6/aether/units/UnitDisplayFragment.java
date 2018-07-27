@@ -8,8 +8,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import kotlin.Unit;
 import xyz.spiral6.aether.R;
+import xyz.spiral6.aether.units.data.UnitEntity;
 
 
 /**
@@ -18,46 +22,93 @@ import xyz.spiral6.aether.R;
  * create an instance of this fragment.
  */
 public class UnitDisplayFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private UnitEntity unit = new UnitEntity();
 
+    private TextView UnitNameLabel;
+    private ImageView MovementType;
+    private ImageView WeaponType;
+    private ImageView LegendaryType;
+    private TextView SeriesText;
+    private TextView FlavorText;
 
     public UnitDisplayFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UnitDisplayFragment.
-     */
     // TODO: Rename and change types and number of parameters
-    public static UnitDisplayFragment newInstance(String param1, String param2) {
+    public static UnitDisplayFragment newInstance() {
         UnitDisplayFragment fragment = new UnitDisplayFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        //Bundle args = new Bundle();
+        //fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            unit = (UnitEntity) getArguments().getSerializable("unit");
         }
+    }
+
+    private int[] pictureLoader(String unitName){
+        int[] pictureIDs = new int[4];
+        for(int i = 0; i < pictureIDs.length; i++){
+            pictureIDs[i] = getResources().getIdentifier(unitName + (i+1), "drawable", getContext().getPackageName());
+        }
+        return pictureIDs;
+    }
+
+    private int getMovementType(String moveType){
+        if(moveType == null){
+            return android.R.color.transparent;
+        }
+        switch(moveType){
+            case "Armored": return R.drawable.icon_move_armored;
+            case "Infantry": return R.drawable.icon_move_infantry;
+            case "Flying": return R.drawable.icon_move_flying;
+            case "Cavalry": return R.drawable.icon_move_cavalry;
+        }
+        return 0; //not found
+    }
+
+    private int getWeaponType(String weaponType){
+        if(weaponType == null){
+            return android.R.color.transparent;
+        }
+        switch(weaponType){
+            case "BlueBow": return R.drawable.icon_class_blue_bow;
+            case "BlueBreath": return R.drawable.icon_class_blue_breath;
+            case "Lance": return R.drawable.icon_class_blue_lance;
+            case "BlueTome": return R.drawable.icon_class_blue_tome;
+            case "RedBow": return R.drawable.icon_class_red_bow;
+            case "RedBreath": return R.drawable.icon_class_red_breath;
+            case "Sword": return R.drawable.icon_class_red_sword;
+            case "RedTome": return R.drawable.icon_class_red_tome;
+            case "GreenBow": return R.drawable.icon_class_green_bow;
+            case "GreenBreath": return R.drawable.icon_class_green_breath;
+            case "Axe": return R.drawable.icon_class_green_axe;
+            case "GreenTome": return R.drawable.icon_class_green_tome;
+            case "Bow": return R.drawable.icon_class_colorless_bow;
+            case "Breath": return R.drawable.icon_class_colorless_breath;
+            case "Dagger": return R.drawable.icon_class_colorless_dagger;
+            case "Staff": return R.drawable.icon_class_colorless_staff;
+        }
+        return 0; //not found
+    }
+
+    private int getLegendaryType(String legendaryType){
+        if(legendaryType == null){
+            return android.R.color.transparent;
+        }
+        switch(legendaryType){
+            case "Fire": return R.drawable.icon_legendary_fire;
+            case "Water": return R.drawable.icon_legendary_water;
+            case "Wind": return R.drawable.icon_legendary_wind;
+            case "Earth": return R.drawable.icon_legendary_earth;
+        }
+        return 0; //not found
     }
 
     @Override
@@ -65,8 +116,23 @@ public class UnitDisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_unit_display, container, false);
         ViewPager viewPager = view.findViewById(R.id.portraitPager);
-        PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getContext(), new int[]{R.drawable.fcorrin1,R.drawable.fcorrin2,R.drawable.fcorrin3,R.drawable.fcorrin4});
-        viewPager.setAdapter(viewPagerAdapter);
+        if(!(unit.getName() == "" || unit.getName() == null)){
+            PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getContext(), pictureLoader(unit.getName()));
+            viewPager.setAdapter(viewPagerAdapter);
+
+            UnitNameLabel = view.findViewById(R.id.unit_search_item_name);
+            UnitNameLabel.setText(unit.getDisplayName() + " - " + unit.getEpithet());
+            SeriesText = view.findViewById(R.id.SeriesText);
+            SeriesText.setText(unit.getSeries());
+            FlavorText = view.findViewById(R.id.FlavorText);
+            FlavorText.setText(unit.getFlavorText());
+            MovementType = view.findViewById(R.id.movementType);
+            MovementType.setImageResource(getMovementType(unit.getMoveType()));
+            WeaponType = view.findViewById(R.id.weaponType);
+            WeaponType.setImageResource(getWeaponType(unit.getWeaponType()));
+            LegendaryType = view.findViewById(R.id.legendaryType);
+            LegendaryType.setImageResource(getLegendaryType(unit.getLegendaryElement()));
+        }
         // Inflate the layout for this fragment
         return view;
     }

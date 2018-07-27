@@ -6,12 +6,16 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-@Entity(tableName = "UnitAttributes", primaryKeys = {"DisplayName", "Epithet"})
-public class UnitEntity{
+import java.io.Serializable;
+
+@Entity(tableName = "UnitAttributes", primaryKeys = {"SearchName", "Epithet"})
+public class UnitEntity implements Serializable{
     @NonNull
     private String Name;
     @NonNull
     private String DisplayName;
+    @NonNull
+    private String SearchName;
     @NonNull
     private String Epithet;
     @NonNull
@@ -200,5 +204,14 @@ public class UnitEntity{
 
     public void setLegendaryRES(Integer legendaryRES) {
         LegendaryRES = legendaryRES;
+    }
+
+    @NonNull
+    public String getSearchName() {
+        return SearchName;
+    }
+
+    public void setSearchName(@NonNull String searchName) {
+        SearchName = searchName;
     }
 }

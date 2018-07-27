@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,14 +32,10 @@ import xyz.spiral6.aether.units.data.UnitEntity;
 public class UnitsFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private AutoCompleteTextView UnitSearch;
     private UnitDatabase unitDatabase;
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -58,8 +55,6 @@ public class UnitsFragment extends Fragment {
     public static UnitsFragment newInstance(String param1, String param2) {
         UnitsFragment fragment = new UnitsFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -68,8 +63,6 @@ public class UnitsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
         unitDatabase = UnitDatabase.getDatabase(getContext());
     }
@@ -80,7 +73,12 @@ public class UnitsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_units, container, false);
         UnitSearch = (AutoCompleteTextView) view.findViewById(R.id.UnitSearch);
+
+        getFragmentManager().beginTransaction().replace(R.id.UnitDisplayFragment, UnitDisplayFragment.newInstance()).commit();
+
         String[] unitsArray = getUnits();
+
+
         ArrayAdapter adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, unitsArray);
         UnitSearch.setAdapter(adapter);
         UnitSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -90,7 +88,16 @@ public class UnitsFragment extends Fragment {
                 InputMethodManager in = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 in.hideSoftInputFromWindow(arg1.getApplicationWindowToken(), 0);
                 String name = arg0.getItemAtPosition(arg2).toString();
-                loadUnitInfo(name);
+                UnitEntity unit = getUnitInfo(name);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("unit",unit);
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Fragment oldFragment = getFragmentManager().findFragmentById(R.id.UnitDisplayFragment);
+                Fragment newFragment = UnitDisplayFragment.newInstance();
+                newFragment.setArguments(bundle);
+                ft.replace(R.id.UnitDisplayFragment, newFragment).commit();
+
             }
 
         });
@@ -106,9 +113,8 @@ public class UnitsFragment extends Fragment {
         return unitsArray;
     }
 
-    private void loadUnitInfo(String DisplayName){
-        UnitEntity unit = unitDatabase.UnitDAO().getUnit(DisplayName);
-
+    private UnitEntity getUnitInfo(String DisplayName){
+        return unitDatabase.UnitDAO().getUnit(DisplayName);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

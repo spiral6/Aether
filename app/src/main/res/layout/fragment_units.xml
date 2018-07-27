@@ -32,9 +32,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <fragment
+            <FrameLayout
                 android:id="@+id/UnitDisplayFragment"
-                android:name="xyz.spiral6.aether.units.UnitDisplayFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
