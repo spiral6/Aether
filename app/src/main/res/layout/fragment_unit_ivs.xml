@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TableLayout
+        android:id="@+id/IVsTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:id="@+id/WeaponSwitchRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/IVLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Level 1 IVs" />
+
+            <Switch
+                android:id="@+id/WeaponSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Weapon"
+                android:textAlignment="textEnd" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/HeaderRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6">
+
+            <TextView
+                android:id="@+id/blankHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/hpHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HP"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/atkHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ATK"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/spdHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SPD"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/defHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DEF"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/resHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RES"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/MinusIVRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6">
+
+            <TextView
+                android:id="@+id/lowHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Low" />
+
+            <TextView
+                android:id="@+id/minusHP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="18"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/minusATK"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/minusSPD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/minusDEF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/minusRES"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/NeutralIVRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6">
+
+            <TextView
+                android:id="@+id/middleHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Middle" />
+
+            <TextView
+                android:id="@+id/neutralHP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="19"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark" />
+
+            <TextView
+                android:id="@+id/neutralATK"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark" />
+
+            <TextView
+                android:id="@+id/neutralSPD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark" />
+
+            <TextView
+                android:id="@+id/neutralDEF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark" />
+
+            <TextView
+                android:id="@+id/neutralRES"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/PlusIVRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6">
+
+            <TextView
+                android:id="@+id/highHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="High" />
+
+            <TextView
+                android:id="@+id/plusHP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="20"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_light" />
+
+            <TextView
+                android:id="@+id/plusATK"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_light" />
+
+            <TextView
+                android:id="@+id/plusSPD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_light" />
+
+            <TextView
+                android:id="@+id/plusDEF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_light" />
+
+            <TextView
+                android:id="@+id/plusRES"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_light" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

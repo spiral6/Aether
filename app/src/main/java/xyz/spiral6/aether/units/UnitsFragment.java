@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import xyz.spiral6.aether.R;
@@ -64,10 +67,32 @@ public class UnitsFragment extends Fragment {
         getFragmentManager().beginTransaction().replace(R.id.UnitDisplayFragment, UnitDisplayFragment.newInstance()).commit();
 
         String[] unitsArray = getUnits();
+        ArrayList<String> tempList=new ArrayList<>();
+        for(int i = 0; i < unitsArray.length; i++){
+            tempList.add(unitsArray[i]);
+        }
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, unitsArray);
+        //ArrayAdapter<String> adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, unitsArray);
+        final ArrayAdapter<String> adapter = new UnitDisplaySearchAdapter(this.getContext(), android.R.layout.simple_list_item_1, tempList);
         UnitSearch.setAdapter(adapter);
+        UnitSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+                //adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         UnitSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override

@@ -46,7 +46,12 @@ class UnitDisplayPortraitPagerAdapter extends PagerAdapter {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "you clicked image " + (position + 1), Toast.LENGTH_LONG).show();
+                switch(position+1){
+                    case 1: Toast.makeText(context, "Default", Toast.LENGTH_SHORT).show(); break;
+                    case 2: Toast.makeText(context, "Attack", Toast.LENGTH_SHORT).show(); break;
+                    case 3: Toast.makeText(context, "Special", Toast.LENGTH_SHORT).show(); break;
+                    case 4: Toast.makeText(context, "Injured", Toast.LENGTH_SHORT).show(); break;
+                }
             }
         });
 
