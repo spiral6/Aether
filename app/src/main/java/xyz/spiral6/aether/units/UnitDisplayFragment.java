@@ -78,17 +78,17 @@ public class UnitDisplayFragment extends Fragment {
             case "BlueBreath": return R.drawable.icon_class_blue_breath;
             case "Lance": return R.drawable.icon_class_blue_lance;
             case "BlueTome": return R.drawable.icon_class_blue_tome;
-            //TODO: add Blue dagger
+            case "BlueDagger": return R.drawable.icon_class_blue_dagger;
             case "RedBow": return R.drawable.icon_class_red_bow;
             case "RedBreath": return R.drawable.icon_class_red_breath;
             case "Sword": return R.drawable.icon_class_red_sword;
             case "RedTome": return R.drawable.icon_class_red_tome;
-            //TODO: add Red Dagger
+            case "RedDagger": return R.drawable.icon_class_red_dagger;
             case "GreenBow": return R.drawable.icon_class_green_bow;
             case "GreenBreath": return R.drawable.icon_class_green_breath;
             case "Axe": return R.drawable.icon_class_green_axe;
             case "GreenTome": return R.drawable.icon_class_green_tome;
-            //TODO: add Green Dagger
+            case "GreenDagger": return R.drawable.icon_class_green_dagger;
             case "Bow": return R.drawable.icon_class_colorless_bow;
             case "Breath": return R.drawable.icon_class_colorless_breath;
             case "Dagger": return R.drawable.icon_class_colorless_dagger;
