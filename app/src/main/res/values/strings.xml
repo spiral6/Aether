@@ -23,5 +23,8 @@
     <string name="unitdisplay_image_desc">Unit image.</string>
     <string name="unitdisplay_series_header">Origin</string>
     <string name="unitdisplay_flavor_header">Flavor Text</string>
+    <string name="unitivs_weapon_label">Weapon</string>
+    <string name="unitivs_level1ivs_label">Level 1 IVs</string>
+    <string name="unitivs_level40ivs_label">Level 40 IVs</string>
 
 </resources>

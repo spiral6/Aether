@@ -40,7 +40,7 @@ public class UnitDisplaySearchAdapter extends ArrayAdapter implements Filterable
             if(constraint != null && names!=null) {
                 for(int i = 0; i < names.size(); i++){
                     String item = names.get(i);
-                    if(item.contains(constraint)){
+                    if(item.toLowerCase().contains(constraint.toString().toLowerCase())){
                         tempList.add(item);
                     }
                 }

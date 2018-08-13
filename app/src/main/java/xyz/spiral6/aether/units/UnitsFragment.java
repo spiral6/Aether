@@ -14,6 +14,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,6 @@ public class UnitsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private AutoCompleteTextView UnitSearch;
     private UnitDatabase unitDatabase;
-
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,14 +65,13 @@ public class UnitsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_units, container, false);
         UnitSearch = view.findViewById(R.id.UnitSearch);
 
-        getFragmentManager().beginTransaction().replace(R.id.UnitDisplayFragment, UnitDisplayFragment.newInstance()).commit();
+        //getFragmentManager().beginTransaction().replace(R.id.UnitDisplayFragment, UnitDisplayFragment.newInstance(), "Blank Unit").commit();
 
         String[] unitsArray = getUnits();
         ArrayList<String> tempList=new ArrayList<>();
         for(int i = 0; i < unitsArray.length; i++){
-            tempList.add(unitsArray[i]);
+            tempList.add(unitsArray[i]); //toArray is apparently not a thing in Android???
         }
-
 
         //ArrayAdapter<String> adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, unitsArray);
         final ArrayAdapter<String> adapter = new UnitDisplaySearchAdapter(this.getContext(), android.R.layout.simple_list_item_1, tempList);
@@ -113,6 +113,8 @@ public class UnitsFragment extends Fragment {
             }
 
         });
+
+
         return view;
     }
 

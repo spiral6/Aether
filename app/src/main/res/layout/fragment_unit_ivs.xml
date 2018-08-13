@@ -21,8 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="Level 1 IVs" />
+                android:gravity="center_vertical" />
 
             <Switch
                 android:id="@+id/WeaponSwitch"
