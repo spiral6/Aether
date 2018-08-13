@@ -20,6 +20,7 @@ public class UnitEntity implements Serializable{
     private String FlavorText;
     @NonNull
     private String Series;
+    private String Rarity;
     @NonNull
     private String MoveType;
     @NonNull
@@ -211,5 +212,13 @@ public class UnitEntity implements Serializable{
 
     public void setSearchName(@NonNull String searchName) {
         SearchName = searchName;
+    }
+
+    public String getRarity(){
+        return Rarity;
+    }
+
+    public void setRarity(String Rarity){
+        this.Rarity = Rarity;
     }
 }

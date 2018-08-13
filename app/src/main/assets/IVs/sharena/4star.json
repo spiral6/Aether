@@ -1,0 +1,57 @@
+{
+	"Level1": {
+		"minus": [
+			1,
+			1,
+			1,
+			1,
+			1
+		],
+		"neutral": [
+			1,
+			1,
+			1,
+			1,
+			1
+		],
+		"plus": [
+			1,
+			1,
+			1,
+			1,
+			1
+		],
+		"weapon": 1
+	},
+	"Level40": {
+		"minus": [
+			1,
+			1,
+			1,
+			1,
+			1
+		],
+		"neutral": [
+			1,
+			1,
+			1,
+			1,
+			1
+		],
+		"plus": [
+			1,
+			1,
+			1,
+			1,
+			1
+		],
+		"weapon": 1
+	},
+    "recommendations": [
+        "boon",
+        "neutral",
+        "boon",
+        "bane",
+        "bane"
+    ]
+}

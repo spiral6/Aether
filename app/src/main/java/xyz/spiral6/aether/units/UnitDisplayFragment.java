@@ -121,6 +121,8 @@ public class UnitDisplayFragment extends Fragment {
 
             TextView unitNameLabel = view.findViewById(R.id.unit_search_item_name);
             unitNameLabel.setText(unit.getDisplayName() + " - " + unit.getEpithet());
+            TextView rarityLabel = view.findViewById(R.id.RarityLabel);
+            rarityLabel.setText(unit.getRarity());
             TextView seriesText = view.findViewById(R.id.SeriesText);
             seriesText.setText(unit.getSeries());
             TextView flavorText = view.findViewById(R.id.FlavorText);
@@ -133,17 +135,18 @@ public class UnitDisplayFragment extends Fragment {
             legendaryType.setImageResource(getLegendaryType(unit.getLegendaryElement()));
 
             setRarityVisibility(view);
+            setDefaultRarityChecked(view, getDefaultRarity());
 
             Bundle bundle = new Bundle();
             bundle.putString("level","level1");
             //TODO: add a check here for initial rarity via unitIVs static method
-            bundle.putString("rarity", "threestar");
+            bundle.putString("rarity", getDefaultRarity());
             bundle.putSerializable("unit", unit);
 
             Bundle bundle2 = new Bundle();
             bundle2.putString("level","level40");
             //TODO: add a check here too for initial rarity via unitIVs static method
-            bundle2.putString("rarity", "threestar");
+            bundle2.putString("rarity", getDefaultRarity());
             bundle2.putSerializable("unit", unit);
 
             Fragment initialLevel1IVTableFragment = UnitIVsFragment.newInstance();
@@ -225,6 +228,43 @@ public class UnitDisplayFragment extends Fragment {
         if(rarities[2] == false){
             RadioButton fivestar = view.findViewById(R.id.fivestarIV);
             fivestar.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private String getDefaultRarity(){
+        boolean[] rarities = new boolean[3];
+
+        try {
+            rarities = UnitIVs.getRarities(getContext(), unit.getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if(rarities[0] == false && rarities[1] == false){
+            return "fivestar";
+        }
+        else if(rarities[0] == false){
+            return "fourstar";
+        }
+        else{
+            return "threestar";
+        }
+    }
+
+    private void setDefaultRarityChecked(View view, String rarity){
+        RadioButton threestar = view.findViewById(R.id.threestarIV);
+        RadioButton fourstar = view.findViewById(R.id.fourstarIV);
+        RadioButton fivestar = view.findViewById(R.id.fivestarIV);
+        switch(rarity){
+            case "threestar":
+                              threestar.setChecked(true);
+                              break;
+            case "fourstar":
+                             fourstar.setChecked(true);
+                             break;
+            case "fivestar":
+                             fivestar.setChecked(true);
+                             break;
         }
     }
 
