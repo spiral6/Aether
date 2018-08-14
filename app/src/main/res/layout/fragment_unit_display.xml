@@ -59,6 +59,7 @@
                 android:layout_height="52dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
+                android:contentDescription="@string/unitdisplay_movement_desc"
                 android:minHeight="52dp"
                 android:minWidth="52dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/unitdisplay_weapon_desc"
                 android:minHeight="52dp"
                 android:minWidth="52dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,6 +84,7 @@
                 android:layout_marginBottom="424dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/unitdisplay_legendary_desc"
                 android:minHeight="52dp"
                 android:minWidth="52dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +98,6 @@
             android:id="@+id/RarityLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gacha: Obtained at 3-4 ★"
             android:textAlignment="center"
             android:textSize="24sp"
             tools:layout_editor_absoluteY="632dp" />
@@ -149,7 +151,16 @@
         <FrameLayout
             android:id="@+id/Level40IVsTable"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" >
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/RecommendedIVsTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </FrameLayout>
 
         <LinearLayout
             android:id="@+id/UnitBioInfo"
@@ -171,7 +182,7 @@
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:inputType="textPersonName"
-                    android:text="@string/unitdisplay_series_header"
+                    android:text="@string/unit_display_series_header"
                     android:textSize="18sp" />
 
                 <TextView
@@ -198,7 +209,7 @@
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:inputType="textMultiLine"
-                    android:text="@string/unitdisplay_flavor_header"
+                    android:text="@string/unit_display_flavor_header"
                     android:textSize="18sp" />
 
                 <TextView

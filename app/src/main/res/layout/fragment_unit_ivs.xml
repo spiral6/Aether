@@ -104,7 +104,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="18"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark" />
 
@@ -113,7 +112,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="7"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark" />
 
@@ -122,7 +120,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark" />
 
@@ -131,7 +128,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="7"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark" />
 
@@ -140,7 +136,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark" />
         </TableRow>
@@ -163,7 +158,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="19"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_orange_dark" />
 
@@ -172,7 +166,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="8"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_orange_dark" />
 
@@ -181,7 +174,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="6"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_orange_dark" />
 
@@ -190,7 +182,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="8"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_orange_dark" />
 
@@ -199,7 +190,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="6"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_orange_dark" />
         </TableRow>
@@ -222,7 +212,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="20"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_light" />
 
@@ -231,7 +220,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="9"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_light" />
 
@@ -240,7 +228,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="7"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_light" />
 
@@ -249,7 +236,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="9"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_light" />
 
@@ -258,7 +244,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="7"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_light" />
         </TableRow>

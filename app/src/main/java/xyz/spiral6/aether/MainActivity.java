@@ -1,11 +1,11 @@
 package xyz.spiral6.aether;
 
+import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
+import android.preference.PreferenceManager;
+import android.app.Fragment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,18 +19,15 @@ import xyz.spiral6.aether.builds.BuildsFragment;
 import xyz.spiral6.aether.units.UnitsFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnFragmentInteractionListener, UnitsFragment.OnFragmentInteractionListener,
+        implements NavigationView.OnNavigationItemSelectedListener,
                    BuildsFragment.OnFragmentInteractionListener{
 
-    //the reason these are hard coded in
-    // is because Android is not able to parse "@string/preferences" in the getSharedPreferences() method.
-    //Android is dumb
-    public static final String PREFS_NAME = "prefs";
     public static final String PREF_DARK_THEME = "dark_theme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        //SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, false);
         if(useDarkTheme) {
             setTheme(R.style.Material_Black);
@@ -84,23 +81,15 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        Fragment fragment = null;
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            fragment = new SettingsFragment();
-        }
-
-        if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_main, fragment).commit();
+                    .replace(R.id.content_main, new SettingsFragment()).commit();
         }
 
         return true;
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -127,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.content_main, fragment).commit();
 
@@ -140,6 +129,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-        Log.d("","Fragment has been interacted with.");
+
     }
 }

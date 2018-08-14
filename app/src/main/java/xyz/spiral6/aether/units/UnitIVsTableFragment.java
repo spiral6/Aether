@@ -1,15 +1,12 @@
 package xyz.spiral6.aether.units;
 
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -23,24 +20,24 @@ import xyz.spiral6.aether.units.data.UnitIVs;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UnitIVsFragment#newInstance} factory method to
+ * Use the {@link UnitIVsTableFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UnitIVsFragment extends Fragment {
+public class UnitIVsTableFragment extends Fragment {
     private UnitEntity unit = new UnitEntity();
     private String rarity = "";
     private String level = "";
     private ArrayList<ArrayList<Integer>> IVTable = new ArrayList<>();
 
 
-    public UnitIVsFragment() {
+    public UnitIVsTableFragment() {
         // Required empty public constructor
     }
 
-    public static UnitIVsFragment newInstance() {
+    public static UnitIVsTableFragment newInstance() {
         //Bundle args = new Bundle();
         //fragment.setArguments(args);
-        return new UnitIVsFragment();
+        return new UnitIVsTableFragment();
     }
 
     @Override
@@ -54,7 +51,7 @@ public class UnitIVsFragment extends Fragment {
 
 
             try {
-                IVs = new UnitIVs(getContext(), unit.getName(), rarity);
+                IVs = new UnitIVs(getActivity(), unit.getName(), rarity);
             }catch (IOException e){
                 e.printStackTrace();
             }
@@ -98,7 +95,7 @@ public class UnitIVsFragment extends Fragment {
                 if(isChecked){
                     UnitIVs IVs = null;
                     try {
-                        IVs = new UnitIVs(getContext(), unit.getName(), rarity);
+                        IVs = new UnitIVs(getActivity(), unit.getName(), rarity);
                     }catch (IOException e){
                         e.printStackTrace();
                     }
@@ -114,7 +111,7 @@ public class UnitIVsFragment extends Fragment {
                 else{
                     UnitIVs IVs = null;
                     try {
-                        IVs = new UnitIVs(getContext(), unit.getName(), rarity);
+                        IVs = new UnitIVs(getActivity(), unit.getName(), rarity);
                     }catch (IOException e){
                         e.printStackTrace();
                     }

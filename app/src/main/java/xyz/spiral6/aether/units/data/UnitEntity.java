@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 
 import java.io.Serializable;
 
+@SuppressWarnings("ALL")
 @Entity(tableName = "UnitAttributes", primaryKeys = {"SearchName", "Epithet"})
 public class UnitEntity implements Serializable{
     @NonNull

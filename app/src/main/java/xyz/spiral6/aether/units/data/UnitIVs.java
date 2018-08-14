@@ -21,21 +21,22 @@ public class UnitIVs {
     public UnitIVs(Context c, String unitName, String rarity) throws IOException {
         this.unitName = unitName;
         this.rarity = rarity;
-        Level1IVs = new ArrayList<ArrayList<Integer>>();
-        Level40IVs = new ArrayList<ArrayList<Integer>>();
-        recommendedIVs = new ArrayList<String>();
+        Level1IVs = new ArrayList<>();
+        Level40IVs = new ArrayList<>();
+        recommendedIVs = new ArrayList<>();
         loadIVs(c);
     }
 
+    @SuppressWarnings("IfCanBeSwitch")
     private void loadIVs(Context c) throws IOException{
 
-        ArrayList<Integer> level1low = new ArrayList<Integer>();
-        ArrayList<Integer> level1neutral = new ArrayList<Integer>();
-        ArrayList<Integer> level1high = new ArrayList<Integer>();
+        ArrayList<Integer> level1low = new ArrayList<>();
+        ArrayList<Integer> level1neutral = new ArrayList<>();
+        ArrayList<Integer> level1high = new ArrayList<>();
 
-        ArrayList<Integer> level40low = new ArrayList<Integer>();
-        ArrayList<Integer> level40neutral = new ArrayList<Integer>();
-        ArrayList<Integer> level40high = new ArrayList<Integer>();
+        ArrayList<Integer> level40low = new ArrayList<>();
+        ArrayList<Integer> level40neutral = new ArrayList<>();
+        ArrayList<Integer> level40high = new ArrayList<>();
 
         //TODO: load unit IVs from folder
 
@@ -194,7 +195,7 @@ public class UnitIVs {
         high.remove(1);
         high.add(1,newhighatk);
 
-        ArrayList<ArrayList<Integer>> newIVs = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> newIVs = new ArrayList<>();
         newIVs.add(low);
         newIVs.add(neutral);
         newIVs.add(high);
@@ -216,13 +217,14 @@ public class UnitIVs {
         high.remove(1);
         high.add(1,newhighatk);
 
-        ArrayList<ArrayList<Integer>> newIVs = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> newIVs = new ArrayList<>();
         newIVs.add(low);
         newIVs.add(neutral);
         newIVs.add(high);
         return newIVs;
     }
 
+    @SuppressWarnings("unused")
     public ArrayList<String> getRecommendedIVs() {
         return recommendedIVs;
     }

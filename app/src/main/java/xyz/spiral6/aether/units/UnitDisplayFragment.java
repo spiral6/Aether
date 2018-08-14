@@ -2,8 +2,8 @@ package xyz.spiral6.aether.units;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -51,7 +51,7 @@ public class UnitDisplayFragment extends Fragment {
     private int[] pictureLoader(String unitName){
         int[] pictureIDs = new int[4];
         for(int i = 0; i < pictureIDs.length; i++){
-            pictureIDs[i] = getResources().getIdentifier(unitName + (i+1), "drawable", getContext().getPackageName());
+            pictureIDs[i] = getResources().getIdentifier(unitName + (i+1), "drawable", getActivity().getPackageName());
         }
         return pictureIDs;
     }
@@ -116,7 +116,7 @@ public class UnitDisplayFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_unit_display, container, false);
         ViewPager viewPager = view.findViewById(R.id.portraitPager);
         if(!(unit.getName() == null)){
-            PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getContext(), pictureLoader(unit.getName()));
+            PagerAdapter viewPagerAdapter = new UnitDisplayPortraitPagerAdapter(getActivity(), pictureLoader(unit.getName()));
             viewPager.setAdapter(viewPagerAdapter);
 
             TextView unitNameLabel = view.findViewById(R.id.unit_search_item_name);
@@ -149,9 +149,9 @@ public class UnitDisplayFragment extends Fragment {
             bundle2.putString("rarity", getDefaultRarity());
             bundle2.putSerializable("unit", unit);
 
-            Fragment initialLevel1IVTableFragment = UnitIVsFragment.newInstance();
+            Fragment initialLevel1IVTableFragment = UnitIVsTableFragment.newInstance();
             initialLevel1IVTableFragment.setArguments(bundle);
-            Fragment initialLevel40IVTableFragment = UnitIVsFragment.newInstance();
+            Fragment initialLevel40IVTableFragment = UnitIVsTableFragment.newInstance();
             initialLevel40IVTableFragment.setArguments(bundle2);
 
             getFragmentManager().beginTransaction().replace(R.id.Level1IVsTable, initialLevel1IVTableFragment).commit();
@@ -160,7 +160,7 @@ public class UnitDisplayFragment extends Fragment {
         }
 
         // This will get the radiogroup
-        final RadioGroup rGroup = (RadioGroup) view.findViewById(R.id.IVButtonGroup);
+        final RadioGroup rGroup = view.findViewById(R.id.IVButtonGroup);
         final FrameLayout oldContainer = view.findViewById(R.id.Level1IVsTable);
         final FrameLayout oldContainer2 = view.findViewById(R.id.Level40IVsTable);
         // This overrides the radiogroup onCheckListener
@@ -169,7 +169,7 @@ public class UnitDisplayFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
                 // This will get the radiobutton that has changed in its check state
-                RadioButton checkedRadioButton = (RadioButton)group.findViewById(checkedId);
+                RadioButton checkedRadioButton = group.findViewById(checkedId);
                 // This puts the value (true/false) into the variable
                 boolean isChecked = checkedRadioButton.isChecked();
                 // If the radiobutton that has changed in check state is now checked...
@@ -178,10 +178,10 @@ public class UnitDisplayFragment extends Fragment {
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
 
                     Fragment oldFragment = getFragmentManager().findFragmentById(R.id.Level1IVsTable);
-                    Fragment newFragment = UnitIVsFragment.newInstance();
+                    Fragment newFragment = UnitIVsTableFragment.newInstance();
 
                     Fragment oldFragment2 = getFragmentManager().findFragmentById(R.id.Level40IVsTable);
-                    Fragment newFragment2 = UnitIVsFragment.newInstance();
+                    Fragment newFragment2 = UnitIVsTableFragment.newInstance();
 
                     Bundle bundle = new Bundle();
                     bundle.putString("level","level1");
@@ -208,11 +208,13 @@ public class UnitDisplayFragment extends Fragment {
         return view;
     }
 
+    @SuppressWarnings("PointlessBooleanExpression")
+    //Allows explicit comparison for readability
     private void setRarityVisibility(View view){
         boolean[] rarities = new boolean[3];
 
         try {
-            rarities = UnitIVs.getRarities(getContext(), unit.getName());
+            rarities = UnitIVs.getRarities(getActivity(), unit.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -235,7 +237,7 @@ public class UnitDisplayFragment extends Fragment {
         boolean[] rarities = new boolean[3];
 
         try {
-            rarities = UnitIVs.getRarities(getContext(), unit.getName());
+            rarities = UnitIVs.getRarities(getActivity(), unit.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -267,12 +269,5 @@ public class UnitDisplayFragment extends Fragment {
                              break;
         }
     }
-
-    /*@Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Fragment level1IVstable = getChildFragmentManager().findFragmentById(R.id.Level1IVsTable);
-        level1IVstable.getView().setVisibility(View.GONE);
-    }*/
 
 }

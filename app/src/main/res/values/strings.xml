@@ -9,6 +9,7 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="settings_dark_theme">Dark Theme</string>
+    <string name="settings_appearance">Appearance</string>
     <string name="unit_search">Search units...</string>
 
     <string name="builds_unit_desc">Unit icon.</string>
@@ -19,10 +20,13 @@
     <string name="builds_bskill_desc">B skill icon</string>
     <string name="builds_cskill_desc">C skill icon</string>
     <string name="builds_sealskill_desc">Seal skill icon</string>
+    <string name="unitdisplay_movement_desc">Movement icon</string>
+    <string name="unitdisplay_weapon_desc">Weapon icon</string>
+    <string name="unitdisplay_legendary_desc">Legendary element icon</string>
 
-    <string name="unitdisplay_image_desc">Unit image.</string>
-    <string name="unitdisplay_series_header">Origin</string>
-    <string name="unitdisplay_flavor_header">Flavor Text</string>
+    <string name="unit_display_image_desc">Unit image.</string>
+    <string name="unit_display_series_header">Origin</string>
+    <string name="unit_display_flavor_header">Flavor Text</string>
     <string name="unitivs_weapon_label">Weapon</string>
     <string name="unitivs_level1ivs_label">Level 1 IVs</string>
     <string name="unitivs_level40ivs_label">Level 40 IVs</string>

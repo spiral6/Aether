@@ -13,11 +13,12 @@ public class UnitDisplaySearchAdapter extends ArrayAdapter implements Filterable
 
     public List<String> names;
     public List<String> filter_names;
+    @SuppressWarnings("FieldCanBeLocal")
     private Filter mFilter;
 
     public UnitDisplaySearchAdapter(@NonNull Context context, int resource, @NonNull ArrayList<String> names) {
         super(context, resource,0, names);
-        this.names = new ArrayList<String>(names);
+        this.names = new ArrayList<>(names);
     }
 
     @Override
@@ -49,9 +50,7 @@ public class UnitDisplaySearchAdapter extends ArrayAdapter implements Filterable
                 filterResults.values = tempList;
                 filterResults.count = tempList.size();
             }else{
-                for(int i = 0; i < names.size(); i++){
-                    tempList.add(names.get(i));
-                }
+                tempList.addAll(names);
 
                 // Assign the data to the FilterResults
                 filterResults.values = tempList;
