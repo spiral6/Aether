@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="accent_material_dark">#ffffff</color>
     <color name="background_material_dark">#000000</color>
+    <color name="GreenText_Light">@android:color/holo_green_dark</color>
+    <color name="YellowText_Light">@android:color/holo_orange_dark</color>
+    <color name="RedText_Light">@android:color/holo_red_dark</color>
+    <color name="GreenText_Dark">@android:color/holo_green_light</color>
+    <color name="YellowText_Dark">@android:color/holo_orange_light</color>
+    <color name="RedText_Dark">@android:color/holo_red_light</color>
 </resources>

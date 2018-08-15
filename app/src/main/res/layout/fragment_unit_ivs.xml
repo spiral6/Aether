@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="?RedText" />
 
             <TextView
                 android:id="@+id/minusATK"
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="?RedText" />
 
             <TextView
                 android:id="@+id/minusSPD"
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="?RedText" />
 
             <TextView
                 android:id="@+id/minusDEF"
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="?RedText" />
 
             <TextView
                 android:id="@+id/minusRES"
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="?RedText" />
         </TableRow>
 
         <TableRow
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="?YellowText" />
 
             <TextView
                 android:id="@+id/neutralATK"
@@ -167,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="?YellowText" />
 
             <TextView
                 android:id="@+id/neutralSPD"
@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="?YellowText" />
 
             <TextView
                 android:id="@+id/neutralDEF"
@@ -183,7 +183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="?YellowText" />
 
             <TextView
                 android:id="@+id/neutralRES"
@@ -191,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="?YellowText" />
         </TableRow>
 
         <TableRow
@@ -213,7 +213,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_green_light" />
+                android:textColor="?GreenText" />
 
             <TextView
                 android:id="@+id/plusATK"
@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_green_light" />
+                android:textColor="?GreenText" />
 
             <TextView
                 android:id="@+id/plusSPD"
@@ -229,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_green_light" />
+                android:textColor="?GreenText" />
 
             <TextView
                 android:id="@+id/plusDEF"
@@ -237,7 +237,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_green_light" />
+                android:textColor="?GreenText" />
 
             <TextView
                 android:id="@+id/plusRES"
@@ -245,7 +245,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_green_light" />
+                android:textColor="?GreenText" />
         </TableRow>
     </TableLayout>
 </LinearLayout>

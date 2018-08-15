@@ -157,6 +157,13 @@ public class UnitDisplayFragment extends Fragment {
             getFragmentManager().beginTransaction().replace(R.id.Level1IVsTable, initialLevel1IVTableFragment).commit();
             getFragmentManager().beginTransaction().replace(R.id.Level40IVsTable, initialLevel40IVTableFragment).commit();
 
+            Fragment initialRecommendedIVTableFragment = UnitRecommendedIVsTableFragment.newInstance();
+            Bundle bundle3 = new Bundle();
+            bundle3.putSerializable("unit", unit);
+            initialRecommendedIVTableFragment.setArguments(bundle3);
+            getFragmentManager().beginTransaction().replace(R.id.RecommendedIVsTable, initialRecommendedIVTableFragment).commit();
+
+
         }
 
         // This will get the radiogroup
