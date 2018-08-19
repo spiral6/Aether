@@ -139,13 +139,11 @@ public class UnitDisplayFragment extends Fragment {
 
             Bundle bundle = new Bundle();
             bundle.putString("level","level1");
-            //TODO: add a check here for initial rarity via unitIVs static method
             bundle.putString("rarity", getDefaultRarity());
             bundle.putSerializable("unit", unit);
 
             Bundle bundle2 = new Bundle();
             bundle2.putString("level","level40");
-            //TODO: add a check here too for initial rarity via unitIVs static method
             bundle2.putString("rarity", getDefaultRarity());
             bundle2.putSerializable("unit", unit);
 

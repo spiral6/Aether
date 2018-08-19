@@ -38,8 +38,6 @@ public class UnitIVs {
         ArrayList<Integer> level40neutral = new ArrayList<>();
         ArrayList<Integer> level40high = new ArrayList<>();
 
-        //TODO: load unit IVs from folder
-
         String filename = "";
         if(rarity.equals("threestar")){
             filename = "3star.json";
@@ -149,8 +147,6 @@ public class UnitIVs {
     }
 
     public static boolean[] getRarities(Context c, String unitName) throws IOException {
-        //TODO: use to check what rarities the unit has.
-
         AssetManager am = c.getAssets();
         String[] rarities = am.list("IVs/" + unitName);
 
