@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import xyz.spiral6.aether.about.AboutFragment;
 import xyz.spiral6.aether.builds.BuildsFragment;
 import xyz.spiral6.aether.units.UnitsFragment;
 
@@ -55,6 +56,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_main, new AboutFragment()).commit();
+
+        navigationView.setCheckedItem(R.id.nav_about);
     }
 
     @Override
@@ -101,7 +108,6 @@ public class MainActivity extends AppCompatActivity
                 fragment = new BuildsFragment();
                 break;
             case R.id.nav_units:
-                //fragment = new UnitDisplayFragment(); //temporary, will move under UnitFragment.
                 fragment = new UnitsFragment();
                 break;
             case R.id.nav_skills:
@@ -111,7 +117,7 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_about:
-
+                fragment = new AboutFragment();
                 break;
         }
 
@@ -119,7 +125,6 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.content_main, fragment).commit();
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -7,6 +7,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="about_author">by Shamee Mahmud</string>
 
     <string name="settings_dark_theme">Dark Theme</string>
     <string name="settings_appearance">Appearance</string>

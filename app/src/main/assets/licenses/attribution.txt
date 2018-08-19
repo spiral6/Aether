@@ -1,0 +1,2 @@
+- Builds, Skills, Inheritance/Fodder icon made by [Freepik](http://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/), and is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+- [Markdown library Markwon by Dimitry Ivanov](https://github.com/noties/Markwon), licensed under the [Apache 2.0 License.](http://www.apache.org/licenses/LICENSE-2.0)
